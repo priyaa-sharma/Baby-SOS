@@ -1,4 +1,3 @@
-# YOLO dataset config. Put your images/labels here (Roboflow export in YOLOv8 format).
 path: datasets/baby_hazards
 train: train/images
 val: valid/images
