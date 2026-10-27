@@ -10,6 +10,16 @@ SETTINGS = "settings.json"
 LIVE = "alerts/live.jpg"
 STATUS = "alerts/status.json"
 
+LOGO_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72"><path d="M32 2 L58 12 V36 C58 54 46 66 32 70 C18 66 6 54 6 36 V12 Z" fill="#4CBB17"/><path d="M32 50 C20 41 17 34 17 29 C17 24 21 21 25 21 C28 21 31 23 32 26 C33 23 36 21 39 21 C43 21 47 24 47 29 C47 34 44 41 32 50 Z" fill="#293325"/></svg>"""
+
+
+def show_logo():
+    try:
+        st.image(LOGO_SVG, width="stretch")
+    except Exception:
+        st.image(LOGO_SVG, use_container_width=True)
+
+
 st.set_page_config(page_title="Baby Safety SOS", layout="wide")
 st.markdown("""
 <style>
@@ -36,7 +46,7 @@ h2,h3 {color:#EAF3E4;}
 .stButton>button {background:#4CBB17; color:#1B2418; font-weight:700; border:none; border-radius:10px;}
 .stButton>button:hover {background:#48872B; color:#FFFFFF;}
 
-.hero {text-align:center; padding:70px 10px 20px 10px;}
+.hero {text-align:center; padding:10px 10px 20px 10px;}
 .hero h1 {font-size:64px; margin:0; color:#4CBB17; font-weight:700;}
 .hero .tag {font-size:22px; color:#EAF3E4; margin-top:10px;}
 .hero .desc {max-width:760px; margin:18px auto 0 auto; font-size:17px; line-height:1.7; color:#CFE3C4;}
@@ -53,6 +63,14 @@ if not st.session_state.started:
     <style>
     [data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"] {display:none;}
     </style>
+    <div style="height:50px;"></div>
+    """, unsafe_allow_html=True)
+
+    _, logo_col, _ = st.columns([5, 1, 5])
+    with logo_col:
+        show_logo()
+
+    st.markdown("""
     <div class="hero">
       <h1>Baby Safety SOS</h1>
       <div class="tag">An AI guardian that watches over your baby when you can't.</div>
@@ -206,6 +224,7 @@ if not st.session_state.started:
     st.markdown("""<div class="note">Baby Safety SOS is a safety assistant and not a replacement for adult
         supervision. Video and audio are processed on your own device and are never uploaded.</div>""",
                 unsafe_allow_html=True)
+    st.markdown("<div style='text-align:center; margin:18px 0 40px 0; color:#4CBB17; font-weight:700; letter-spacing:3px; font-size:15px;'> — PRIYA SHARMA</div>", unsafe_allow_html=True)
     st.stop()
 
 
@@ -231,7 +250,11 @@ def show_table(df):
 
 
 cfg = load()
-st.title("Baby Safety SOS")
+head_logo, head_title = st.columns([1, 14], vertical_alignment="center")
+with head_logo:
+    show_logo()
+with head_title:
+    st.markdown('<h1 style="margin:0;">Baby Safety SOS</h1>', unsafe_allow_html=True)
 st.caption("Live dashboard. Monitoring runs in monitor.py, so alerts keep working even if this page is closed.")
 
 with st.sidebar:
