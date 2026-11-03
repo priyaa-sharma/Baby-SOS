@@ -56,6 +56,10 @@ baby-safety-sos/
 ## WORKING 
 
 https://github.com/user-attachments/assets/def24c4a-6465-4ee7-a881-c90ed1ed0c00
+<img width="958" height="412" alt="Screenshot 2026-11-03 115809" src="https://github.com/user-attachments/assets/e2ea0948-f0d5-41e8-936c-fbbc3db05ea2" />
+<img width="959" height="378" alt="image" src="https://github.com/user-attachments/assets/37f6060e-4203-4c66-93fb-826203ed53e3" />
+
+
 <img width="959" height="412" alt="image" src="https://github.com/user-attachments/assets/8ca9dc70-2e92-4375-9455-516743e55185" />
 
 <img width="776" height="329" alt="Screenshot 2026-10-26 202120" src="https://github.com/user-attachments/assets/ff634308-5a04-4964-b87c-55f1334bb597" />
